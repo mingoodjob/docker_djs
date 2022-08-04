@@ -82,6 +82,11 @@ DATABASES = {
     }
 }
 
+STATIC_ROOT = BASE_DIR / 'static'
+STATIC_URL = '/static/'
+
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
