@@ -5,7 +5,6 @@
     runs-on: ubuntu-lastest
     steps:
       - run: echo "🍕 The Job was automatocally triggered by a ${{ github.event_name }} event."
-      # OS 체크
       - run: echo "This Job is now running on a ${{ runner.os }} OS!"
       - run: echo "The name of your branch ${{ github.ref }} in ${{ github.repository }}"
       - name: Check out repository code
