@@ -30,5 +30,11 @@ jobs:
       - name: Run Tests
         env : 
           SECRET_KEY : ${{secrets.SECRET_KEY}}
+          postgresql_host : ${{secrets.postgresql_host}}
+          postgresql_port : ${{secrets.postgresql_port}}
+          postgresql_user : ${{secrets.postgresql_user}}
+          postgresql_password : ${{secrets.postgresql_password}}
+          postgresql_db : ${{secrets.postgresql_db}}
+          
         run: |
           python manage.py test
