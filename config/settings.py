@@ -22,6 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
+#os.environ["AWS_ACCESS_KEY_ID"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
