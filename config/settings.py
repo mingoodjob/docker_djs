@@ -27,7 +27,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['49.247.26.138','backend','127.0.0.1']
+ALLOWED_HOSTS = ['49.247.26.138','backend','127.0.0.1','djangopython-env.eba-numniqeg.ap-northeast-2.elasticbeanstalk.com']
 
 
 # Application definition
