@@ -27,7 +27,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['49.247.26.138','backend','127.0.0.1','Pythond-env.eba-kmz4s7xx.ap-northeast-2.elasticbeanstalk.com','172.31.11.71']
+ALLOWED_HOSTS = ['49.247.26.138','backend','127.0.0.1','pythondj-env.eba-mk8hvzq2.ap-northeast-2.elasticbeanstalk.com','172.31.11.71']
 
 
 # Application definition
