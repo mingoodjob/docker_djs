@@ -6,7 +6,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     exposure = models.BooleanField(default=False)
-    image = models.FileField(blank=True)
+    image = models.FileField(blank=True, upload_to='post/%Y%m%d/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
