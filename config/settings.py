@@ -30,9 +30,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split()
 
-# Application definition
+# 미디어 파일을 위한 스토리지 설정
+DEFAULT_FILE_STORAGE = 'config.asset_storage.MediaStorage' 
 
 INSTALLED_APPS = [
+    'post',
     'user',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
@@ -151,11 +154,51 @@ DATABASES = {
     }
 }
 
+
 STATIC_ROOT = BASE_DIR / 'static'
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
+
+
+# S3 설정을 위한 변수
+# AWS_xxx 의 변수들은 aws-S3, boto3 모듈을 위한 변수들이다.
+
+# # 엑세스 키와 시크릿 키는 다른 파일로 작성, 임포트하여 사용
+# AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY"]
+# AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_KEY"]
+
+# AWS_REGION = 'ap-northeast-2'
+# AWS_STORAGE_BUCKET_NAME = 'pracs3'
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME, AWS_REGION)
+# AWS_S3_OBJECT_PARAMETERS = {
+#     'CacheControl': 'max-age=86400',
+# }
+# AWS_DEFAULT_ACL = 'public-read'
+# AWS_LOCATION = 'static'
+# STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static')
+# ]
+
+###########################AWS
+AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY"] # .csv 파일에 있는 내용을 입력 Access key ID
+AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_KEY"] # .csv 파일에 있는 내용을 입력 Secret access key
+AWS_REGION = 'ap-northeast-2'
+
+###S3 Storages
+AWS_STORAGE_BUCKET_NAME = 'pracs3' # 설정한 버킷 이름
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME,AWS_REGION)
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_DEFAULT_ACL = 'public-read'
+AWS_S3_FILE_OVERWRITE = False
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'path/to/store/my/files/')
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
