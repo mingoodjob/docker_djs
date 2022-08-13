@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS').split(' ')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
 
 # 미디어 파일을 위한 스토리지 설정
 DEFAULT_FILE_STORAGE = 'config.asset_storage.MediaStorage' 
@@ -137,11 +137,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-postgresql_host = os.environ.get["postgresql_host"]
-postgresql_port = os.environ.get["postgresql_port"]
-postgresql_user = os.environ.get["postgresql_user"]
-postgresql_password = os.environ.get["postgresql_password"]
-postgresql_db = os.environ.get["postgresql_db"]
+postgresql_host = os.environ.get("postgresql_host")
+postgresql_port = os.environ.get("postgresql_port")
+postgresql_user = os.environ.get("postgresql_user")
+postgresql_password = os.environ.get("postgresql_password")
+postgresql_db = os.environ.get("postgresql_db")
 
 DATABASES = {
     'default': {
@@ -184,8 +184,8 @@ MEDIA_URL = '/media/'
 # ]
 
 ###########################AWS
-AWS_ACCESS_KEY_ID = os.environ.get["AWS_ACCESS_KEY"] # .csv 파일에 있는 내용을 입력 Access key ID
-AWS_SECRET_ACCESS_KEY = os.environ.get["AWS_SECRET_KEY"] # .csv 파일에 있는 내용을 입력 Secret access key
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY") # .csv 파일에 있는 내용을 입력 Access key ID
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_KEY") # .csv 파일에 있는 내용을 입력 Secret access key
 AWS_REGION = 'ap-northeast-2'
 
 ###S3 Storages
