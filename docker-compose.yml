@@ -7,7 +7,7 @@ services:
     volumes:
       - ./:/srv/docker-server/
     env_file:
-      - ./.env1
+      - ./.env
     ports:
      - 8000:8000
     working_dir: /srv/docker-server/
