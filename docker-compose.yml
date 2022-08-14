@@ -28,7 +28,7 @@ services:
     restart: always
 
   certbot:
-    image: certbot
+    image: certbot/certbot
     volumes:
       - ./certbot/:/etc/letsencrypt/
       - ./certbot/live/:/var/www/
