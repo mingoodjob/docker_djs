@@ -11,12 +11,12 @@ class PostTest(TestCase):
     #     response = self.client.get('/post/1/')
     #     self.assertEqual(response.status_code, 200)
 
-    def test_post_create(self):
-        response = self.client.post('/post/', {
-            'author': 1,
-            'title': 'test',
-            'content': 'test',
-            'exposure': True,
-            # 'image': 'test',
-        })
-        self.assertEqual(response.status_code, 200)
+    # def test_post_create(self):
+    #     response = self.client.post('/post/', {
+    #         'author': 1,
+    #         'title': 'test',
+    #         'content': 'test',
+    #         'exposure': True,
+    #         # 'image': 'test',
+    #     })
+    #     self.assertEqual(response.status_code, 200)
