@@ -111,7 +111,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CSRF_TRUSTED_ORIGINS = ['http://49.247.26.138', 'http://www.dk-backend.shop']
+CSRF_TRUSTED_ORIGINS = ['http://49.247.26.138', 'https://www.dk-backend.shop']
 
 CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS').split(' ')
 
