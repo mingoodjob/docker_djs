@@ -15,7 +15,7 @@ jobs:
         server: 49.247.26.138
         username: root
         password: ${{ secrets.ftp_password }}
-        port: 22
+        port: 21
         protocol: sftp
         server-dir: root/
         dry-run: true
