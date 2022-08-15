@@ -12,10 +12,10 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: 49.247.26.138
+        server: sftp://49.247.26.138
         username: root
         password: ${{ secrets.ftp_password }}
-        port: 21
+        port: 22
         protocol: sftp
         server-dir: root/
         dry-run: true
