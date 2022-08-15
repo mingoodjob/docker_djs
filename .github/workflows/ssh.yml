@@ -22,4 +22,5 @@ jobs:
           timeout: 40s  # 30초 기본        
           script: |
             echo "테스트 출력"
-            ls -a
+            cd docker_djs
+            git pull
