@@ -1,11 +1,9 @@
-name: React build apple
+name: Project Git pull
 
-######### master branch에 push 되었을때만 실행#########
 on: 
   push:            
     branches:
       - master
-######### master branch에 push 되었을때만 실행#########
 
 jobs:
   React-Build-ssh-action:
@@ -21,6 +19,5 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           timeout: 40s  # 30초 기본        
           script: |
-            echo "테스트 출력"
             cd docker_djs
             git pull
